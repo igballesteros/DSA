@@ -19,3 +19,7 @@ void addBeginning(Node** head, Node* temp);
 void addPosition(Node** head, Node* temp);
 
 void deleteNode(Node** head);
+
+void reverseList(Node** head);
+
+void reverseRecursion(Node** head, Node* ptr);

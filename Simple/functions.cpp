@@ -114,3 +114,27 @@ void deleteNode(Node** head) {
 
     printNodes(*head);
 }
+
+void reverseList(Node** head) {
+    Node* current = *head;
+    Node* prev = nullptr;
+    Node* next = nullptr;
+
+    while (current != nullptr) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    *head = prev;
+}
+
+void reverseRecursion(Node** head, Node* p) {
+    if (p->next == NULL) {
+        *head = p;
+    }
+    reverseRecursion(head, p->next);
+    Node* q = p->next;
+    q->next = p;
+    p->next = nullptr;
+}
