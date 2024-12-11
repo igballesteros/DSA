@@ -2,7 +2,7 @@
 
 #define MAX_SIZE 50
 
-void Pop(int* top) {
+void pop(int* top) {
     if (*top == -1) {
         std::cout << "Stack is empty\n";
         return;
@@ -11,7 +11,7 @@ void Pop(int* top) {
 
 }
 
-void Push(int* A, int* top) {
+void push(int* A, int* top) {
     if (*top >= MAX_SIZE - 1) {
         std::cout << "Stack is full\n";
         return;
@@ -34,7 +34,7 @@ bool isEmpty(int top) {
     return false;
 }
 
-int Top(int* A, int top) {
+int topElement(int* A, int top) {
     return A[top];
 }
 
@@ -71,7 +71,7 @@ int main() {
             std::cin >> amount;
 
             for (int i = 0; i < amount; i++) {
-                Push(A, &top);
+                push(A, &top);
             }
         }
 
@@ -80,7 +80,7 @@ int main() {
         }
 
         else if (option == 3) {
-            Pop(&top);
+            pop(&top);
         }
 
         else if (option == 4) {
@@ -93,7 +93,7 @@ int main() {
         }
 
         else if (option == 5) {
-            int topNum = Top(A, top);
+            int topNum = topElement(A, top);
             std::cout << "The top element is: " << topNum << "\n\n";
         }
     }
